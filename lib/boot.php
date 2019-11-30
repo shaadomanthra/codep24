@@ -94,7 +94,7 @@ class Boot{
 		if($i==1){
 			$lang = 'clang';
 		
-			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n printf(\"Hello World!\");\n return 0;\n}"}]}';	
+			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n int i; for(i=0;i<30;i++)printf(\"%d \",(i*30/2 -1));\n return 0;\n}"}]}';	
 		}else{
 			$lang = 'java';
 		
@@ -120,7 +120,7 @@ class Boot{
 		if($i==1){
 			$lang = 'clang';
 		
-			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n printf(\"Hello World!\");\n return 0;\n}"}]}';	
+			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n int i; for(i=0;i<30;i++)printf(\"%d \",(i*30/2 -1));\n return 0;\n}"}]}';	
 		}else{
 			$lang = 'java';
 		
