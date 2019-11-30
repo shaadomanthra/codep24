@@ -1,1 +1,1 @@
-sudo ./runner java
+sudo ./runner c
