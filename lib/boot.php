@@ -53,7 +53,7 @@ class Boot{
 		$filename = $file.'.json';
 		file_put_contents($filename, $payload);
 		
-		$cmd = "sudo ./runner ".$file;
+		$cmd = "bash bash.sh ".$file;
 
 		echo $cmd;
 		echo "\n";
