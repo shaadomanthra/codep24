@@ -49,13 +49,16 @@ class Boot{
 
 	function run2($lang,$payload){
 
-		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
+		$file = 'json/'.substr(md5(mt_rand()), 0, 7);
+		$filename = $file.'.json';
 		file_put_contents($filename, $payload);
 		
-		$cmd = "go run glot/runner.go ".$filename;
-		
+		$cmd = "sudo ./runner ".$file;
+
+		echo $cmd;
+		echo "\n";
 		$output = shell_exec($cmd);
-		//unlink($filename);
+		unlink($filename);
 		return $output;
 		
 	}
@@ -135,7 +138,7 @@ class Boot{
 			$json = new Boot;
 		$json->time = round($execution_time,2);
 		$output = json_encode($json);
-		header('Content-Type: application/json');
+		//header('Content-Type: application/json');
 		echo $output;
 	}
 
