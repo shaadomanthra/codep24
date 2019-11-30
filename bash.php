@@ -1,6 +1,6 @@
 <?php
 
-$json = shell_exec("bash bash.sh c");
+$json = shell_exec("bash bash.sh b75104c");
 //file_put_contents($file, $output);
 
 
