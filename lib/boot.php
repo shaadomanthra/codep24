@@ -43,7 +43,7 @@ class Boot{
 		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
 		
 		$output = shell_exec($cmd);
-		//unlink($filename);
+		unlink($filename);
 		return $output;
 	}
 
