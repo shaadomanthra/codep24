@@ -52,7 +52,7 @@ class Boot{
 		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
 		file_put_contents($filename, $payload);
 		
-		$cmd = "sudo go run glot/runner.go ".$filename;
+		$cmd = "go run glot/runner.go ".$filename;
 		
 		$output = shell_exec($cmd);
 		//unlink($filename);
