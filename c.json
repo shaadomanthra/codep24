@@ -1,0 +1,1 @@
+{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n printf(\"Hello World!\");\n return 0;\n}"}]}
