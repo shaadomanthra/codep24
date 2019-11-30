@@ -2,7 +2,7 @@
 
 
 
-$json = shell_exec("bash bash.sh json/b75104c");
+$json = run3();
 //file_put_contents($file, $output);
 
 
@@ -10,6 +10,9 @@ header('Content-Type: application/json');
 echo $json;
 
 
+function run3(){
+		return shell_exec("bash bash.sh json/b75104c");
+}
 
 	function run2($lang,$payload){
 
