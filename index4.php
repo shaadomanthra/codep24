@@ -1,25 +1,15 @@
 <?php
 
 
-$start_time = microtime(true);
-			$lang = 'clang';
-		
-			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n printf(\"Hello World!\");\n return 0;\n}"}]}';	
-		
-		
 
-		
-		$output = run2($lang,$payload);
-		$end_time = microtime(true); 
+$json = shell_exec("bash bash.sh json/b75104c");
+//file_put_contents($file, $output);
 
-		$execution_time = ($end_time - $start_time); 
-		$json = json_decode($output);
-		if(!$json)
-			$json = new Boot;
-		$json->time = round($execution_time,2);
-		$output = json_encode($json);
-		//header('Content-Type: application/json');
-		echo $output;
+
+header('Content-Type: application/json');
+echo $json;
+
+
 
 	function run2($lang,$payload){
 
