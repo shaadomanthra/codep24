@@ -1,5 +1,1 @@
-{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "      #include <stdio.h> 
-      int main(void) {
-      printf(\"Hello World!\\n\");
-      return 0; 
-    }"}]}
+{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": ""      #include <stdio.h> \r\n      int main(void) {\r\n      printf(\"Hello World!\\n\");\r\n      return 0; \r\n    }""}]}
