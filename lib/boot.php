@@ -63,7 +63,7 @@ class Boot{
 		else if($lang =='python')
 			$payload = '{"language": "python", "files": [{"name": "main.py", "content": '.$code.'}]}';
 		else if($lang =='perl')
-			$payload = '{"language":"perl","command":"perl main.pl", "files": [{"name": "main.pl", "content": '.$code.';}]}';
+			$payload = '{"language":"perl","command":"perl main.pl", "files": [{"name": "main.pl", "content": '.$code.'}]}';
 		return $payload;
 	}
 
