@@ -66,6 +66,8 @@ class Boot{
 		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
 
 		$output = shell_exec($cmd);
+		file_put_contents('json/output.json', $output);
+		file_put_contents('json/payload.json', $payload);
 		unlink($filename);
 		return $output;
 	}
