@@ -11,8 +11,9 @@ class Boot{
 		$hash = $this->get('hash');
 		$lang = $this->get('lang');
 		$form = $this->get('form');
+		$page = $this->get('page');
 		$docker = $this->get('docker');
-		
+
 
 		if($hash=='krishnateja'){
 			if($docker)
@@ -89,23 +90,6 @@ class Boot{
 	function pages($page){
 		$page_file = 'pages/'.$page.'.php';
 		if(file_exists($page_file)){
-			$start_time = microtime(true);
-			$payload = $this->get('payload');
-			$hash = $this->get('hash');
-			$lang = $this->get('lang');
-			$docker = $this->get('docker');
-
-			if($hash=='krishnateja'){
-				if($docker)
-					$output = $this->run_docker($lang,$payload);
-				else
-					$output = $this->run_plain($lang,$payload);
-
-				$end_time = microtime(true); 
-				$execution_time = ($end_time - $start_time); 
-				
-			}
-
 			require 'pages/blocks/page.php';
 		}
 		else
