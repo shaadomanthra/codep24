@@ -45,7 +45,7 @@ class Boot{
 	}
 
 	function payload($lang,$code){
-
+		$code = addslashes($code);
 		if($lang=='java')
 			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": "'.$code.'"}]}';
 		else if($lang=='c')
