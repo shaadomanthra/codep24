@@ -7,6 +7,8 @@
         <footer class="blockquote-footer"><cite title="Source Title">Austin Freeman</cite></footer>
       </blockquote>
     </div>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Code Editor</a>
+    <a class="btn btn-primary btn-lg" href="editor/c.php" role="button">C Editor</a>
+  <a class="btn btn-primary btn-lg" href="editor/java.php" role="button">Java Editor</a>
+
   </div>
 </main>
