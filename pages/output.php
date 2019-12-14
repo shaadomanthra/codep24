@@ -4,17 +4,15 @@
     <div class="jumbotron jumbotron-fluid rounded p-4 mt-5">
       <?php if($output){ ?>
       <pre>
-        <h1> Output</h1>
-        <code>
-      <?php echo $output; ?>
-      </code>
+        <h5> Output</h5>
+        <hr>
+        <code><?php echo $output; ?></code>
       </pre>
     <?php }else{ ?>
       <pre>
-        <h1>Error</h1>
-        <code>
-          <?php echo $error; ?>
-        </code>
+        <h5>Error</h5>
+        <hr>
+        <code><?php echo $error; ?></code>
       </pre>
     <?php } ?>
     </div>
