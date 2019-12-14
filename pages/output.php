@@ -10,8 +10,7 @@
 <pre><code><?php echo $error; ?></code></pre>
     <?php } ?>
     </div>
-    <div class="p-4">
-      <h3>Time</h3>
+    <div class="pb-2 pt-2">
       <pre>
         <code>
           output genererated in <span class="text-primary""><?php echo $time; ?></span> sec
