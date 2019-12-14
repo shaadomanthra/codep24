@@ -121,12 +121,9 @@ class Boot{
 		if($_SERVER['REQUEST_URI']){
 			$nodes = explode('/', $_SERVER['REQUEST_URI']);
 			if(isset($nodes[1])){
-				echo $nodes[1];
-				echo "<br><br>";
 				if($nodes[1]!='index.php' && $nodes[1]!='')
 					$this->pages($nodes[1]);
 				else{
-					echo "main";
 					$this->main();
 				}
 			}
