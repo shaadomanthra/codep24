@@ -64,7 +64,8 @@ class Boot{
 		$cmd = "bash bash.sh ".$file;
 
 		$output = shell_exec($cmd);
-		unlink($filename);
+		file_put_contents('json/output.json', $output);
+		//unlink($filename);
 		return $output;
 		
 	}
