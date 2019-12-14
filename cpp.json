@@ -1,1 +1,0 @@
-{"language":"c","command":"clang++ main.cpp && ./a.out", "files": [{"name": "main.cpp", "content": "#include <iostream> \n using namespace std; \nint main() { \n cout << \"Hello World!\"; \nreturn 0;\n}"}]}
