@@ -3,6 +3,7 @@
 
 class Boot{
 
+
 	function main(){
 		$start_time = microtime(true);
 
@@ -10,25 +11,26 @@ class Boot{
 		$hash = $this->get('hash');
 		$lang = $this->get('lang');
 		$form = $this->get('form');
+		$docker = $this->get('docker');
 		
 
 		if($hash=='krishnateja'){
-			$output = $this->run($lang,$payload);
+			if($docker)
+				$output = $this->run_docker($lang,$payload);
+			else
+				$output = $this->run_plain($lang,$payload);
 
 			$end_time = microtime(true); 
 			$execution_time = ($end_time - $start_time); 
 			$json = json_decode($output);
 			$json->time = round($execution_time,2);
+			
 			$output = json_encode($json);
 			header('Content-Type: application/json');
 			echo $output;
-			
 		
 		}else{
-			require 'pages/blocks/header.php';
-			require 'pages/home.php';
-			require 'pages/blocks/footer.php';
-
+			require 'pages/blocks/page.php';
 		}
 	}
 
@@ -37,19 +39,19 @@ class Boot{
 		return $r;
 	}
 
-	function run($lang,$payload){
+	function run_docker($lang,$payload){
 
 		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
 		file_put_contents($filename, $payload);
 		$cat = 'cat '.$filename;
 		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
-		
+
 		$output = shell_exec($cmd);
 		unlink($filename);
 		return $output;
 	}
 
-	function run2($lang,$payload){
+	function run_plain($lang,$payload){
 
 		$file = 'json/'.substr(md5(mt_rand()), 0, 7);
 		$filename = $file.'.json';
@@ -57,8 +59,6 @@ class Boot{
 		
 		$cmd = "bash bash.sh ".$file;
 
-		echo $cmd;
-		echo "\n";
 		$output = shell_exec($cmd);
 		unlink($filename);
 		return $output;
@@ -68,15 +68,24 @@ class Boot{
 	function pages($page){
 		$page_file = 'pages/'.$page.'.php';
 		if(file_exists($page_file)){
-			if($page=='form'){
-				$payload = $this->get('payload');
-				$hash = $this->get('hash');
-				$lang = $this->get('lang');
-				if($hash=='krishnateja' && $lang && $payload){
-				$output = $this->run($lang,$payload);
-				}
+			$start_time = microtime(true);
+			$payload = $this->get('payload');
+			$hash = $this->get('hash');
+			$lang = $this->get('lang');
+			$docker = $this->get('docker');
+		
+			if($hash=='krishnateja'){
+				if($docker)
+					$output = $this->run_docker($lang,$payload);
+				else
+					$output = $this->run_plain($lang,$payload);
+
+				$end_time = microtime(true); 
+				$execution_time = ($end_time - $start_time); 
+				
 			}
-			require $page_file;
+
+			require 'pages/blocks/page.php';
 		}
 		else
 			require 'pages/404.php';
@@ -85,8 +94,14 @@ class Boot{
 	function router(){
 		if($_SERVER['REQUEST_URI']){
 			$nodes = explode('/', $_SERVER['REQUEST_URI']);
-			
-			$this->main();
+			if(isset($nodes[1])){
+				if($nodes[1]!='index.php' && $nodes[1]!='')
+					$this->pages($nodes[1]);
+				else
+					$this->main();
+			}
+			else
+				$this->main();
 		}
 	}
 

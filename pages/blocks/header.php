@@ -16,6 +16,14 @@
 <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
 <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#563d7c">
+<link rel="stylesheet" href="../css/codemirror.css">
+<link rel="stylesheet" href="../css/material.css">
+<script src="../js/codemirror.js"></script>
+<script src="../js/clike.js"></script>
+<script src="../js/perl.js"></script>
+<script src="../js/python.js"></script>
+<script src="../js/active-line.js"></script>
+<script src="../js/matchbrackets.js"></script>
 
 
     <style>
@@ -27,6 +35,7 @@
         -ms-user-select: none;
         user-select: none;
       }
+      .CodeMirror {padding-top:20px;}
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
