@@ -10,6 +10,7 @@
 <pre><code><?php echo $error; ?></code></pre>
     <?php } ?>
     </div>
+    <a class="btn btn-success btn-lg" href="<?php echo $back; ?>" role="button">back</a>
     <a class="btn btn-primary btn-lg" href="index.php" role="button">Homepage</a>
   </div>
 </main>

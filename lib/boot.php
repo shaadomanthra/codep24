@@ -130,8 +130,11 @@ class Boot{
 		if($_SERVER['REQUEST_URI']){
 			$nodes = explode('/', $_SERVER['REQUEST_URI']);
 			if(isset($nodes[1])){
-				if($nodes[1]!='index.php' && $nodes[1]!='')
+				if($nodes[1]!='index.php' && $nodes[1]!=''){
+					$url = $this->url();
+					$back = $this->get('back');
 					$this->pages($nodes[1]);
+				}
 				else{
 					$this->main();
 				}
@@ -193,6 +196,20 @@ class Boot{
 		$output = json_encode($json);
 		//header('Content-Type: application/json');
 		echo $output;
+	}
+
+	function url(){
+		if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+         $url = "https://";   
+    else  
+         $url = "http://";   
+    // Append the host(domain name, ip) to the URL.   
+    $url.= $_SERVER['HTTP_HOST'];   
+    
+    // Append the requested resource location to the URL   
+    $url.= $_SERVER['REQUEST_URI'];    
+      
+    return $url;  
 	}
 
 	

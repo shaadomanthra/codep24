@@ -19,6 +19,7 @@
     <input type="hidden" name="lang" value="java" />
     <input type="hidden" name="page" value="output" />
     <input type="hidden" name="docker" value="1" />
+    <input type="hidden" name="back" value="<?php echo $url; ?>" />
     <button type="submit" class="btn btn-primary btn-lg mt-4"  role="button" >Run</button>
   </form>
 
