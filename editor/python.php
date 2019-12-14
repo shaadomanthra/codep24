@@ -7,16 +7,12 @@
   C++ Program to print half pyramid a using numbers
 </div>
     <form action="../index.php" method="post"><textarea id="python-code" name="code">def squaresum(n) : 
-  
-    # Iterate i from 1  
-    # and n finding  
-    # square of i and 
-    # add to sum. 
-    sm = 0
-    for i in range(1, n+1) : 
-        sm = sm + (i * i) 
+
+ sm = 0
+ for i in range(1, n+1) : 
+ sm = sm + (i * i) 
       
-    return sm 
+return sm 
   
 # Driven Program 
 n = 4
