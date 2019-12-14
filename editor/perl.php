@@ -6,11 +6,10 @@
      <div class="alert alert-info" role="alert">
   C++ Program to print half pyramid a using numbers
 </div>
-    <form action="../index.php" method="post"><textarea id="perl-code" name="code">#!/usr/local/bin/perl
-      $name = "Teja";
-$age = 20;
+    <form action="../index.php" method="post"><textarea id="perl-code" name="code">
+$name = "Teja";
 
-$status = ($age < 18 )? "a minor" : "not a minor";
+$status = "not a minor";
 
 print "$name is  - $status\n"; </textarea>
     <input type="hidden" name="hash" value="krishnateja" />
