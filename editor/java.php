@@ -15,7 +15,6 @@
     <input type="hidden" name="hash" value="krishnateja" />
     <input type="hidden" name="lang" value="java" />
     <input type="hidden" name="page" value="output" />
-    <input type="hidden" name="docker" value="1" />
     <button type="submit" class="btn btn-primary btn-lg mt-4"  role="button" >Run</button>
   </form>
 
