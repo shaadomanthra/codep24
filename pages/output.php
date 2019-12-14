@@ -10,6 +10,13 @@
 <pre><code><?php echo $error; ?></code></pre>
     <?php } ?>
     </div>
+    <div class="p-4">
+      <pre>
+        <code>
+          output genererated in <span class="text-primary""><?php echo $time; ?></span> sec
+        </code>
+      </pre>
+    </div>
     <a class="btn btn-success btn-lg" href="<?php echo $back; ?>" role="button">back</a>
     <a class="btn btn-primary btn-lg" href="index.php" role="button">Homepage</a>
   </div>

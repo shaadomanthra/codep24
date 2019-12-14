@@ -32,6 +32,7 @@ class Boot{
 			if($page=='output'){
 				$output = $json->stdout;
 				$error = $json->stderr;
+				$time = $json->time;
 				$back = $this->get('back');
 				require 'pages/blocks/page.php';
 			}else{
