@@ -82,7 +82,7 @@ class Boot{
 
 		$output = shell_exec($cmd);
 		file_put_contents('json/output.json', $output);
-		unlink($filename);
+		//unlink($filename);
 		return $output;
 		
 	}
