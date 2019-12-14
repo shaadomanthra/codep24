@@ -4,7 +4,7 @@
 
 <h2>HTML Forms</h2>
 
-<form action="index.php" method="get">
+<form action="index.php" method="post">
   hash:<br>
   <input type="text" name="hash" value="krishnateja">
   <br>
