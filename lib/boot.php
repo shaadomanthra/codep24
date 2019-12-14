@@ -37,7 +37,7 @@ class Boot{
 				require 'pages/blocks/page.php';
 			}else{
 				header('Content-Type: application/json');
-				echo json_encode($json);
+				echo $json;
 			}
 			
 		
