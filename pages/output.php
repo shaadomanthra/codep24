@@ -3,17 +3,11 @@
     <h1 class="mt-5"><img src="img/p24.png" width="100px"/></h1>
     <div class="jumbotron jumbotron-fluid rounded p-4 mt-5">
       <?php if($output){ ?>
-      <pre>
         <h5> Output</h5>
-        <hr>
-        <code><?php echo $output; ?></code>
-      </pre>
+<pre><code><?php echo $output; ?></code></pre>
     <?php }else{ ?>
-      <pre>
-        <h5>Error</h5>
-        <hr>
-        <code><?php echo $error; ?></code>
-      </pre>
+      <h5>Error</h5>
+<pre><code><?php echo $error; ?></code></pre>
     <?php } ?>
     </div>
     <a class="btn btn-primary btn-lg" href="index.php" role="button">Homepage</a>
