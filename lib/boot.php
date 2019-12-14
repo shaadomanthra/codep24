@@ -68,13 +68,14 @@ class Boot{
 
 		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
 		file_put_contents($filename, $payload);
+		file_put_contents('json/payload.json', $payload);
 
 		$cat = 'cat '.$filename;
 		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
 
 		$output = shell_exec($cmd);
 		file_put_contents('json/output.json', $output);
-		file_put_contents('json/payload.json', $payload);
+		
 		unlink($filename);
 		return $output;
 	}
@@ -84,12 +85,13 @@ class Boot{
 		$file = 'json/'.substr(md5(mt_rand()), 0, 7);
 		$filename = $file.'.json';
 		file_put_contents($filename, $payload);
+		file_put_contents('json/payload.json', $payload);
 		
 		$cmd = "bash bash.sh ".$file;
 
 		$output = shell_exec($cmd);
 		file_put_contents('json/output.json', $output);
-		file_put_contents('json/payload.json', $payload);
+		
 		unlink($filename);
 		return $output;
 		
