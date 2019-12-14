@@ -22,7 +22,7 @@
 n = 4
 print(squaresum(n)) </textarea>
     <input type="hidden" name="hash" value="krishnateja" />
-    <input type="hidden" name="lang" value="clang" />
+    <input type="hidden" name="lang" value="python" />
     <input type="hidden" name="page" value="output" />
     <input type="hidden" name="docker" value="1" />
     <input type="hidden" name="back" value="<?php echo url(); ?>" />
@@ -34,7 +34,7 @@ print(squaresum(n)) </textarea>
     var cEditor = CodeMirror.fromTextArea(document.getElementById("python-code"), {
       lineNumbers: true,
       matchBrackets: true,
-      mode: "text/x-cython",
+      mode: "python",
       theme: "material",
       indentUnit: 4
     });
