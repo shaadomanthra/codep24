@@ -29,8 +29,13 @@ class Boot{
 			$json->time = round($execution_time,2);
 			
 
-			header('Content-Type: application/json');
-			echo $output;
+			if($page=='output'){
+				require 'pages/blocks/page.php';
+			}else{
+				header('Content-Type: application/json');
+				echo $output;
+			}
+			
 		
 		}else{
 			require 'pages/blocks/page.php';
