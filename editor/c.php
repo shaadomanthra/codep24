@@ -1,7 +1,7 @@
 <?php require '../pages/blocks/header.php';  ?>
 <main role="main" class="flex-shrink-0">
   <div class="container">
-    <h1 class="mt-5 mb-5"><img src="img/p24.png" width="100px"/></h1>
+    <h1 class="mt-5 mb-5"><img src="../img/p24.png" width="100px"/></h1>
     <form action="../index.php" method="post"><textarea id="c-code" name="payload">
       #include <stdio.h> 
       int main(void) {

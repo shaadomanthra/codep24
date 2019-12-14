@@ -16,11 +16,13 @@ class Boot{
 
 
 		if($hash=='krishnateja'){
+			echo $payload.'<br>';
 			if($docker)
 				$output = $this->run_docker($lang,$payload);
 			else
 				$output = $this->run_plain($lang,$payload);
 
+			echo $output.'<br>';
 			$end_time = microtime(true); 
 			$execution_time = ($end_time - $start_time); 
 			$json = json_decode($output);
@@ -100,10 +102,14 @@ class Boot{
 		if($_SERVER['REQUEST_URI']){
 			$nodes = explode('/', $_SERVER['REQUEST_URI']);
 			if(isset($nodes[1])){
+				echo $nodes[1];
+				echo "<br><br>";
 				if($nodes[1]!='index.php' && $nodes[1]!='')
 					$this->pages($nodes[1]);
-				else
+				else{
+					echo "main";
 					$this->main();
+				}
 			}
 			else
 				$this->main();
