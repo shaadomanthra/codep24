@@ -11,6 +11,7 @@
     <?php } ?>
     </div>
     <div class="p-4">
+      <h3>Time</h3>
       <pre>
         <code>
           output genererated in <span class="text-primary""><?php echo $time; ?></span> sec
