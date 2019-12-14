@@ -18,19 +18,17 @@ class Boot{
 
 
 		if($hash=='krishnateja'){
-			echo $payload.'<br>';
 			if($docker)
 				$output = $this->run_docker($lang,$payload);
 			else
 				$output = $this->run_plain($lang,$payload);
 
-			echo $output.'<br>';
 			$end_time = microtime(true); 
 			$execution_time = ($end_time - $start_time); 
 			$json = json_decode($output);
 			$json->time = round($execution_time,2);
 			
-			$output = json_encode($json);
+
 			header('Content-Type: application/json');
 			echo $output;
 		
