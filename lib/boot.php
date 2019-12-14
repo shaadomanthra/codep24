@@ -25,8 +25,10 @@ class Boot{
 			
 		
 		}else{
-			echo "<h1>Hello !</h1>";
-			echo "<pre>Krishna Teja GS</pre>";
+			require 'pages/blocks/header.php';
+			require 'pages/home.php';
+			require 'pages/blocks/footer.php';
+
 		}
 	}
 
@@ -124,7 +126,7 @@ class Boot{
 		}else{
 			$lang = 'java';
 		
-			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": "class Main{public static void main(String[] args) { for(int i=1;i<5;i++) System.out.println(\"Start\");}}"}]}';
+			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": "class Main{public static void main(String[] args) { for(int i=1;i<100000;i++) System.out.println(i*2);}}"}]}';
 		}
 		
 
