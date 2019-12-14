@@ -4,18 +4,27 @@
   <div class="container">
     <h1 class="mt-5 mb-5"><a href="../index.php"><img src="../img/p24.png" width="100px"/></a></h1>
      <div class="alert alert-info" role="alert">
-  A basic c program to print 'Hello World' message
+  C++ Program to print half pyramid a using numbers
 </div>
-    <form action="../index.php" method="post"><textarea id="c-code" name="code">#include <stdio.h> 
-
-int main(void) {
-    printf("Hello World!\n");
-    return 0; 
+    <form action="../index.php" method="post"><textarea id="c-code" name="code">#include <iostream>
+using namespace std;
+int main()
+{
+    int rows=5;
+    for(int i = 1; i <= rows; ++i)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << j << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
 }</textarea>
     <input type="hidden" name="hash" value="krishnateja" />
     <input type="hidden" name="lang" value="clang" />
-    <input type="hidden" name="c" value="1" />
     <input type="hidden" name="page" value="output" />
+    <input type="hidden" name="c" value="0" />
     <input type="hidden" name="docker" value="1" />
     <input type="hidden" name="back" value="<?php echo url(); ?>" />
     <a class="btn btn-success btn-lg" href="../index.php" role="button">back</a>
