@@ -43,6 +43,7 @@ class Boot{
 
 		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
 		file_put_contents($filename, $payload);
+
 		$cat = 'cat '.$filename;
 		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
 
@@ -65,6 +66,26 @@ class Boot{
 		
 	}
 
+	function code(){
+		$start_time = microtime(true);
+			$payload = $this->get('payload');
+			$hash = $this->get('hash');
+			$lang = $this->get('lang');
+			$docker = $this->get('docker');
+			$output = false;
+			if($hash=='krishnateja'){
+				if($docker)
+					$output = $this->run_docker($lang,$payload);
+				else
+					$output = $this->run_plain($lang,$payload);
+
+				$end_time = microtime(true); 
+				$execution_time = ($end_time - $start_time); 
+				
+			}
+			return $output;
+	}
+
 	function pages($page){
 		$page_file = 'pages/'.$page.'.php';
 		if(file_exists($page_file)){
@@ -73,7 +94,7 @@ class Boot{
 			$hash = $this->get('hash');
 			$lang = $this->get('lang');
 			$docker = $this->get('docker');
-		
+
 			if($hash=='krishnateja'){
 				if($docker)
 					$output = $this->run_docker($lang,$payload);
