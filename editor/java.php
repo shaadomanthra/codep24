@@ -21,8 +21,9 @@
     <input type="hidden" name="hash" value="krishnateja" />
     <input type="hidden" name="lang" value="java" />
     <input type="hidden" name="page" value="output" />
-    <input type="hidden" name="docker" value="1" />
+    <input type="hidden" name="docker" value="0" />
     <input type="hidden" name="back" value="<?php echo url(); ?>" />
+    <a class="btn btn-success btn-lg" href="../index.php" role="button">back</a>
     <button type="submit" class="btn btn-primary btn-lg mt-4 mb-4"  role="button" >Run</button>
   </form>
 

@@ -14,16 +14,6 @@
     <button type="submit" class="btn btn-primary btn-lg mt-4"  role="button" >Run</button>
   </form>
 
-<?php
-    if(isset($output)){ ?>
-  <div class="card">
-    <div class="card-body">
-      
-          echo $output;
-      
-    </div>
-  </div>
-<?php } ?>
   <script>
     var cEditor = CodeMirror.fromTextArea(document.getElementById("c-code"), {
       lineNumbers: true,
