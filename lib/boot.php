@@ -31,7 +31,7 @@ class Boot{
 
 			if($page=='output'){
 				$output = $json->stdout;
-				$error = $json->error;
+				$error = $json->stderr;
 				require 'pages/blocks/page.php';
 			}else{
 				header('Content-Type: application/json');
