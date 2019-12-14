@@ -7,8 +7,6 @@
   hash:<br>
   <input type="text" class="form-control" name="hash" value="krishnateja">
   <br>
-  Docker:<br>
-  <input type="text" class="form-control" name="docker" value="1"><br>
   C:<br>
   <input type="text" class="form-control" name="c" value="1"><br>
   Docker:<br>
