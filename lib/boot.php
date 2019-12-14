@@ -46,9 +46,9 @@ class Boot{
 		$code = json_encode($code);
 		if($lang=='java')
 			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": "'.$code.'"}]}';
-		else if($lang=='c')
+		else if($lang=='clang')
 			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": '.$code.'}]}';
-		else if($lang =='cpp')
+		else if($lang =='clang')
 			$payload = '{"language":"c","command":"clang++ main.cpp && ./a.out", "files": [{"name": "main.c", "content": "'.$code.'"}]}';
 		else if($lang =='python')
 			$payload = '{"language": "python", "files": [{"name": "main.py", "content": "'.$code.'"}]}';
