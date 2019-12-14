@@ -7,12 +7,14 @@ class Boot{
 	function main(){
 		$start_time = microtime(true);
 
-		$payload = $this->get('payload');
+		$code= $this->get('code');
 		$hash = $this->get('hash');
 		$lang = $this->get('lang');
 		$form = $this->get('form');
 		$page = $this->get('page');
 		$docker = $this->get('docker');
+
+		$payload = $this->payload($lang,$code);
 
 
 		if($hash=='krishnateja'){
@@ -42,6 +44,21 @@ class Boot{
 		return $r;
 	}
 
+	function payload($lang,$code){
+
+		if($lang=='java')
+			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": "'.$code.'"}]}';
+		else if($lang=='c')
+			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "'.$code.'"}]}';
+		else if($lang =='cpp')
+			$payload = '{"language":"c","command":"clang++ main.cpp && ./a.out", "files": [{"name": "main.c", "content": "'.$code.'"}]}';
+		else if($lang =='python')
+			$payload = '{"language": "python", "files": [{"name": "main.py", "content": "'.$code.'"}]}';
+		else if($lang =='perl')
+			$payload = '{"language":"perl","command":"perl main.pl", "files": [{"name": "main.pl", "content": "'.$code.'";"}]}';
+
+	}
+
 	function run_docker($lang,$payload){
 
 		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
@@ -65,7 +82,7 @@ class Boot{
 
 		$output = shell_exec($cmd);
 		file_put_contents('json/output.json', $output);
-		//unlink($filename);
+		unlink($filename);
 		return $output;
 		
 	}

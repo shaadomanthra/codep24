@@ -9,7 +9,7 @@
       return 0; 
     }</textarea>
     <input type="hidden" name="hash" value="krishnateja" />
-    <input type="hidden" name="lang" value="clang" />
+    <input type="hidden" name="lang" value="c" />
     <input type="hidden" name="page" value="output" />
     <button type="submit" class="btn btn-primary btn-lg mt-4"  role="button" >Run</button>
   </form>
