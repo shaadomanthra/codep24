@@ -1,4 +1,4 @@
-<main role="main" class="flex-shrink-0">
+<main role="main" class="flex-shrink-0 mb-4">
   <div class="container">
     <h1 class="mt-5"><img src="img/p24.png" width="100px"/></h1>
     <div class="jumbotron jumbotron-fluid rounded p-4 mt-5">
@@ -11,10 +11,7 @@
     <?php } ?>
     </div>
     <div class="pb-2 pt-2">
-      <pre>
-        <code>
-          output genererated in <span class="text-primary""><?php echo $time; ?></span> sec
-        </code>
+      <pre><code>output genererated in <span class="text-primary""><?php echo $time; ?></span> sec</code>
       </pre>
     </div>
     <a class="btn btn-success btn-lg" href="<?php echo $back; ?>" role="button">back</a>
