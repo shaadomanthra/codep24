@@ -27,7 +27,7 @@ class Boot{
 			$execution_time = ($end_time - $start_time); 
 			$json = json_decode($output);
 			$json->time = round($execution_time,2);
-			
+			$output2 = json_encode($json);
 
 			if($page=='output'){
 				$output = $json->stdout;
@@ -37,7 +37,7 @@ class Boot{
 				require 'pages/blocks/page.php';
 			}else{
 				header('Content-Type: application/json');
-				echo $json;
+				echo $output2;
 			}
 			
 		
