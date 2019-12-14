@@ -1,1 +1,1 @@
-{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": "public class Main {\r\n\r\n   public static void main(String[] args) {\r\n        \r\n      int num1 = 5, num2 = 15, sum;\r\n      sum = num1 + num2;\r\n\r\n      System.out.println(\"Sum of these numbers: \"+sum);\r\n   }\r\n}"}]}
+{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \\n int main(void)\\n {\\n printf(\\\"Hello World!\\\");\\n return 0;\\n}\r\n  "}]}
