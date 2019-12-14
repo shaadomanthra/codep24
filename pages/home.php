@@ -7,11 +7,11 @@
         <footer class="blockquote-footer"><cite title="Source Title">Austin Freeman</cite></footer>
       </blockquote>
     </div>
-    <a class="btn btn-outline-primary btn-lg mb-3" href="editor/c.php" role="button">C Editor</a>
-  <a class="btn btn-outline-primary btn-lg mb-3" href="editor/cpp.php" role="button">C++ Editor</a>
-  <a class="btn btn-outline-primary btn-lg mb-3" href="editor/java.php" role="button">Java Editor</a>
-  <a class="btn btn-outline-primary btn-lg mb-3" href="editor/python.php" role="button">Python Editor</a>
-  <a class="btn btn-outline-primary btn-lg mb-3" href="editor/perl.php" role="button">Perl Editor</a>
+    <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/c.php" role="button">C Editor</a>
+  <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/cpp.php" role="button">C++ Editor</a>
+  <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/java.php" role="button">Java Editor</a>
+  <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/python.php" role="button">Python Editor</a>
+  <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/perl.php" role="button">Perl Editor</a>
 
   </div>
 </main>
