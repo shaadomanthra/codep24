@@ -8,7 +8,10 @@
       </blockquote>
     </div>
     <a class="btn btn-outline-primary btn-lg" href="editor/c.php" role="button">C Editor</a>
+  <a class="btn btn-outline-primary btn-lg" href="editor/cpp.php" role="button">C++ Editor</a>
   <a class="btn btn-outline-primary btn-lg" href="editor/java.php" role="button">Java Editor</a>
+  <a class="btn btn-outline-primary btn-lg" href="editor/python.php" role="button">Python Editor</a>
+  <a class="btn btn-outline-primary btn-lg" href="editor/perl.php" role="button">Perl Editor</a>
 
   </div>
 </main>

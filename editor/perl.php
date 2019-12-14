@@ -6,18 +6,15 @@
      <div class="alert alert-info" role="alert">
   C++ Program to print half pyramid a using numbers
 </div>
-    <form action="../index.php" method="post"><textarea id="python-code" name="code">def squaresum(n) : 
-  sm = 0
-  for i in range(1, n+1) : 
-    sm = sm + (i * i) 
-      
-  return sm 
-  
-# Driven Program 
-n = 4
-print(squaresum(n)) </textarea>
+    <form action="../index.php" method="post"><textarea id="perl-code" name="code">#!/usr/local/bin/perl
+      $name = "Teja";
+$age = 20;
+
+$status = ($age < 18 )? "a minor" : "not a minor";
+
+print "$name is  - $status\n"; </textarea>
     <input type="hidden" name="hash" value="krishnateja" />
-    <input type="hidden" name="lang" value="python" />
+    <input type="hidden" name="lang" value="perl" />
     <input type="hidden" name="page" value="output" />
     <input type="hidden" name="docker" value="1" />
     <input type="hidden" name="back" value="<?php echo url(); ?>" />
@@ -26,10 +23,10 @@ print(squaresum(n)) </textarea>
   </form>
 
   <script>
-    var cEditor = CodeMirror.fromTextArea(document.getElementById("python-code"), {
+    var cEditor = CodeMirror.fromTextArea(document.getElementById("perl-code"), {
       lineNumbers: true,
       matchBrackets: true,
-      mode: "text/x-python",
+      mode: "text/x-perl",
       theme: "material",
       indentUnit: 4
     });
