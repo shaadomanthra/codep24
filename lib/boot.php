@@ -32,6 +32,7 @@ class Boot{
 			if($page=='output'){
 				$output = $json->stdout;
 				$error = $json->stderr;
+				$back = $this->get('back');
 				require 'pages/blocks/page.php';
 			}else{
 				header('Content-Type: application/json');
@@ -51,6 +52,7 @@ class Boot{
 
 	function payload($lang,$code){
 		$code = json_encode($code);
+		$payload = null;
 		if($lang=='java')
 			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": '.$code.'}]}';
 		else if($lang=='clang')
@@ -201,15 +203,15 @@ class Boot{
 	function url(){
 		if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
          $url = "https://";   
-    else  
+    	else  
          $url = "http://";   
-    // Append the host(domain name, ip) to the URL.   
-    $url.= $_SERVER['HTTP_HOST'];   
-    
-    // Append the requested resource location to the URL   
-    $url.= $_SERVER['REQUEST_URI'];    
-      
-    return $url;  
+	    // Append the host(domain name, ip) to the URL.   
+	    $url.= $_SERVER['HTTP_HOST'];   
+	    
+	    // Append the requested resource location to the URL   
+	    $url.= $_SERVER['REQUEST_URI'];    
+	      
+	    return $url;  
 	}
 
 	

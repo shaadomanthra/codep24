@@ -1,9 +1,10 @@
 <?php require '../pages/blocks/header.php';  ?>
+<?php  require '../lib/url.php'; ?>
 <main role="main" class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5 mb-5"><img src="../img/p24.png" width="100px"/></h1>
     <div class="alert alert-info" role="alert">
-  A simple java Program to add two numbers
+  A simple java program to add two numbers
 </div>
     <form action="../index.php" method="post"><textarea id="java-code" name="code">public class Main {
 
@@ -19,8 +20,8 @@
     <input type="hidden" name="lang" value="java" />
     <input type="hidden" name="page" value="output" />
     <input type="hidden" name="docker" value="1" />
-    <input type="hidden" name="back" value="<?php echo $url; ?>" />
-    <button type="submit" class="btn btn-primary btn-lg mt-4"  role="button" >Run</button>
+    <input type="hidden" name="back" value="<?php echo url(); ?>" />
+    <button type="submit" class="btn btn-primary btn-lg mt-4 mb-4"  role="button" >Run</button>
   </form>
 
   <script>
@@ -35,4 +36,5 @@
   
 </div>
 </main>
+
 <?php  require '../pages/blocks/footer.php'; ?>

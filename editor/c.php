@@ -1,7 +1,11 @@
 <?php require '../pages/blocks/header.php';  ?>
+<?php  require '../lib/url.php'; ?>
 <main role="main" class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5 mb-5"><img src="../img/p24.png" width="100px"/></h1>
+     <div class="alert alert-info" role="alert">
+  A basic c program to print 'Hello World' message
+</div>
     <form action="../index.php" method="post"><textarea id="c-code" name="code">#include <stdio.h> 
 
 int main(void) {
@@ -12,7 +16,7 @@ int main(void) {
     <input type="hidden" name="lang" value="clang" />
     <input type="hidden" name="page" value="output" />
     <input type="hidden" name="docker" value="1" />
-    <input type="hidden" name="back" value="<?php echo $url; ?>" />
+    <input type="hidden" name="back" value="<?php echo url(); ?>" />
     <button type="submit" class="btn btn-primary btn-lg mt-4"  role="button" >Run</button>
   </form>
 
