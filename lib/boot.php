@@ -147,7 +147,7 @@ class Boot{
 		
 
 		
-		$output = $this->run($lang,$payload);
+		$output = $this->run_docker($lang,$payload);
 		$end_time = microtime(true); 
 
 		$execution_time = ($end_time - $start_time); 
@@ -173,7 +173,7 @@ class Boot{
 		
 
 		
-		$output = $this->run2($lang,$payload);
+		$output = $this->run_plain($lang,$payload);
 		$end_time = microtime(true); 
 
 		$execution_time = ($end_time - $start_time); 
