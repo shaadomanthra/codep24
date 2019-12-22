@@ -53,17 +53,19 @@ class Boot{
 
 	function payload($lang,$code){
 		$code = json_encode($code);
+		$input = $this->get('input');
+
 		$payload = null;
 		if($lang=='java')
-			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": '.$code.'}]}';
+			$payload = '{"language":"java","command":"javac Main.java && java Main '.$input.'", "files": [{"name": "Main.java", "content": '.$code.'}]}';
 		else if($lang=='clang' && $this->get('c')==1)
-			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": '.$code.'}]}';
+			$payload = '{"language":"c","command":"clang main.c && ./a.out '.$input.'", "files": [{"name": "main.c", "content": '.$code.'}]}';
 		else if($lang =='clang' && $this->get('c')==0)
-			$payload = '{"language":"c","command":"clang++ main.cpp && ./a.out", "files": [{"name": "main.cpp", "content": '.$code.'}]}';
+			$payload = '{"language":"c","command":"clang++ main.cpp && ./a.out '.$input.'", "files": [{"name": "main.cpp", "content": '.$code.'}]}';
 		else if($lang =='python')
-			$payload = '{"language": "python", "files": [{"name": "main.py", "content": '.$code.'}]}';
+			$payload = '{"language": "python","command":"python main.py '.$input.'", "files": [{"name": "main.py", "content": '.$code.'}]}';
 		else if($lang =='perl')
-			$payload = '{"language":"perl","command":"perl main.pl", "files": [{"name": "main.pl", "content": '.$code.'}]}';
+			$payload = '{"language":"perl","command":"perl main.pl '.$input.'", "files": [{"name": "main.pl", "content": '.$code.'}]}';
 		return $payload;
 	}
 
