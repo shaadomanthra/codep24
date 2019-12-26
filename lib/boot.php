@@ -59,9 +59,9 @@ class Boot{
 		if($lang=='java')
 			$payload = '{"language":"java","command":"javac Main.java && java Main '.$input.'", "files": [{"name": "Main.java", "content": '.$code.'}]}';
 		else if($lang=='clang' && $this->get('c')==1)
-			$payload = '{"language":"c","command":"clang main.c  && -lm ./a.out '.$input.'", "files": [{"name": "main.c", "content": '.$code.'}]}';
+			$payload = '{"language":"c","command":"clang main.c  &&  ./a.out '.$input.'", "files": [{"name": "main.c", "content": '.$code.'}]}';
 		else if($lang =='clang' && $this->get('c')==0)
-			$payload = '{"language":"c","command":"clang++ main.cpp && -lm ./a.out '.$input.'", "files": [{"name": "main.cpp", "content": '.$code.'}]}';
+			$payload = '{"language":"c","command":"clang++ main.cpp && ./a.out '.$input.'", "files": [{"name": "main.cpp", "content": '.$code.'}]}';
 		else if($lang =='python')
 			$payload = '{"language": "python","command":"python main.py '.$input.'", "files": [{"name": "main.py", "content": '.$code.'}]}';
 		else if($lang =='perl')
