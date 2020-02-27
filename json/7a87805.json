@@ -1,1 +1,0 @@
-{"language":"csharp","command":"mcs -out:a.exe main.cs && mono a.exe ", "files": [{"name": "main.cs", "content": using System; class HelloWorld { static void Main() { Console.Write("Hello World,");}}}]}

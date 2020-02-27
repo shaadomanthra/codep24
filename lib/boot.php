@@ -77,6 +77,9 @@ class Boot{
 		file_put_contents($filename, $payload);
 		file_put_contents('json/payload.json', $payload);
 
+		if($lang=='csharp')
+			$lang = 'mono';
+		
 		$cat = 'cat '.$filename;
 		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
 
