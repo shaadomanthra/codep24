@@ -66,6 +66,8 @@ class Boot{
 			$payload = '{"language": "python","command":"python main.py '.$input.'", "files": [{"name": "main.py", "content": '.$code.'}]}';
 		else if($lang =='perl')
 			$payload = '{"language":"perl","command":"perl main.pl '.$input.'", "files": [{"name": "main.pl", "content": '.$code.'}]}';
+		else if($lang =='csharp')
+			$payload = '{"language":"csharp","command":"mcs -out:a.exe main.cs && mono a.exe '.$input.'", "files": [{"name": "main.cs", "content": '.$code.'}]}';
 		return $payload;
 	}
 
