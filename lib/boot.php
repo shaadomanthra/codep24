@@ -83,7 +83,7 @@ class Boot{
 		$output = shell_exec($cmd);
 		file_put_contents('json/output.json', $output);
 		
-		unlink($filename);
+		//unlink($filename);
 		return $output;
 	}
 
@@ -154,11 +154,16 @@ class Boot{
 	function router2($i){
 		
 		$start_time = microtime(true);
+		$code = '"using System; class HelloWorld { static void Main() { Console.Write(\"Hello World,\");}}"';
+
 		if($i==1){
 			$lang = 'clang';
 		
 			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n int i; for(i=0;i<30;i++)printf(\"%d \",(i*30/2 -1));\n return 0;\n}"}]}';	
-		}else{
+		}else if($i==2){
+			$payload = '{"language":"csharp","command":"mcs -out:a.exe main.cs && mono a.exe ", "files": [{"name": "main.cs", "content": '.$code.'}]}';
+		}
+		else{
 			$lang = 'java';
 		
 			$payload = '{"language":"java","command":"javac Main.java && java Main", "files": [{"name": "Main.java", "content": "class Main{public static void main(String[] args) { for(int i=1;i<5;i++) System.out.println(\"Start\");}}"}]}';

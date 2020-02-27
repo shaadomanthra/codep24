@@ -6,4 +6,4 @@
 require 'lib/boot.php';
 
 $boot = new Boot();
-$boot->router2(1);
+$boot->router2(2);

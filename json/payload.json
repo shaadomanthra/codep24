@@ -1,1 +1,1 @@
-{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h>\r\nint main(void) {\r\n  printf(\"Hello World!\");\r\n  return 0;\r\n}\r\n  "}]}
+{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n int i; for(i=0;i<30;i++)printf(\"%d \",(i*30/2 -1));\n return 0;\n}"}]}
