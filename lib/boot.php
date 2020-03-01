@@ -13,13 +13,14 @@ class Boot{
 		$form = $this->get('form');
 		$page = $this->get('page');
 		$docker = $this->get('docker');
+		$name = $this->get('name');
 
 		$payload = $this->payload($lang,$code);
 
 
 		if($hash=='krishnateja'){
 			if($docker)
-				$output = $this->run_docker($lang,$payload);
+				$output = $this->run_docker($lang,$payload,$name);
 			else
 				$output = $this->run_plain($lang,$payload);
 
@@ -71,7 +72,8 @@ class Boot{
 		return $payload;
 	}
 
-	function run_docker($lang,$payload){
+	function run_docker($lang,$payload,$name=null){
+		if(!$name)
 		$name = substr(md5(mt_rand()), 0, 7);
 		$filename = 'json/'.$name.'.json';
 		file_put_contents($filename, $payload);
@@ -84,13 +86,23 @@ class Boot{
 		$cmd = $cat." |  docker run -i --name ".$name." glot/".$lang."  /bin/bash -c 'cat' ";
 
 		//echo $cmd;
-		shell_exec("docker rm $(docker ps -a -q)");
+		
 		$output = shell_exec($cmd);
 		//file_put_contents('json/output.json', $output);
-		shell_exec("docker container stop ".$name);
+		
 		unlink($filename);
 		return $output;
 	}
+
+	function removeDocker(){
+		shell_exec("docker rm $(docker ps -a -q)");
+
+	}
+	function stopDocker(){
+		$name =  $this->get('name');
+		shell_exec("docker container stop ".$name);
+	}
+
 
 	function run_plain($lang,$payload){
 
