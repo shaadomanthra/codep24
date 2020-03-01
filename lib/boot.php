@@ -100,7 +100,7 @@ class Boot{
 	}
 	function stopDocker(){
 		$name =  $this->get('name');
-		shell_exec("docker container stop ".$name);
+		shell_exec("docker container stop -t 20 ".$name);
 	}
 
 
