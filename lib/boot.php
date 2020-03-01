@@ -75,18 +75,18 @@ class Boot{
 
 		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
 		file_put_contents($filename, $payload);
-		file_put_contents('json/payload.json', $payload);
+		//file_put_contents('json/payload.json', $payload);
 
 		if($lang=='csharp')
 			$lang = 'mono';
-		
+
 		$cat = 'cat '.$filename;
 		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
 
 		$output = shell_exec($cmd);
-		file_put_contents('json/output.json', $output);
+		//file_put_contents('json/output.json', $output);
 		
-		//unlink($filename);
+		unlink($filename);
 		return $output;
 	}
 
