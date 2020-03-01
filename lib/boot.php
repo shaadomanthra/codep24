@@ -72,8 +72,8 @@ class Boot{
 	}
 
 	function run_docker($lang,$payload){
-
-		$filename = 'json/'.substr(md5(mt_rand()), 0, 7).'.json';
+		$name = substr(md5(mt_rand()), 0, 7);
+		$filename = 'json/'.$name.'.json';
 		file_put_contents($filename, $payload);
 		//file_put_contents('json/payload.json', $payload);
 
@@ -81,11 +81,13 @@ class Boot{
 			$lang = 'mono';
 
 		$cat = 'cat '.$filename;
-		$cmd = $cat." |  docker run -i  glot/".$lang."  /bin/bash -c 'cat'";
+		$cmd = $cat." |  docker run -i --name ".$name." glot/".$lang."  /bin/bash -c 'cat' ";
 
+		//echo $cmd;
+		shell_exec("docker rm $(docker ps -a -q)");
 		$output = shell_exec($cmd);
 		//file_put_contents('json/output.json', $output);
-		
+		shell_exec("docker container stop ".$name);
 		unlink($filename);
 		return $output;
 	}
@@ -164,6 +166,7 @@ class Boot{
 		
 			$payload = '{"language":"c","command":"clang main.c && ./a.out", "files": [{"name": "main.c", "content": "#include<stdio.h> \n int main(void)\n {\n int i; for(i=0;i<30;i++)printf(\"%d \",(i*30/2 -1));\n return 0;\n}"}]}';	
 		}else if($i==2){
+			$lang='csharp';
 			$payload = '{"language":"csharp","command":"mcs -out:a.exe main.cs && mono a.exe ", "files": [{"name": "main.cs", "content": '.$code.'}]}';
 		}
 		else{
