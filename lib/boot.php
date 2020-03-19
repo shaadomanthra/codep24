@@ -102,10 +102,13 @@ class Boot{
 		$files = scandir('json/');
 		foreach($files as $file) {
 			if($file!=='.' && $file!=='..'){
-				echo $file.' ';
+				//echo $file.' ';
 				$p = explode('.', $file);
 				$name = $p[0];
+				$filename = 'json/'.$file;
+				//echo $filename;
 				shell_exec("docker container stop -t 20 ".$name);
+				unlink($filename);
 				break;
 			}
 		}
