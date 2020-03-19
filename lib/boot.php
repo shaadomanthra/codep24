@@ -90,7 +90,7 @@ class Boot{
 		$output = shell_exec($cmd);
 		//file_put_contents('json/output.json', $output);
 		
-		unlink($filename);
+		//unlink($filename);
 		return $output;
 	}
 
@@ -120,14 +120,14 @@ class Boot{
 		$file = 'json/'.substr(md5(mt_rand()), 0, 7);
 		$filename = $file.'.json';
 		file_put_contents($filename, $payload);
-		file_put_contents('json/payload.json', $payload);
+		//file_put_contents('json/payload.json', $payload);
 		
 		$cmd = "bash bash.sh ".$file;
 
 		$output = shell_exec($cmd);
 		file_put_contents('json/output.json', $output);
 		
-		unlink($filename);
+		//unlink($filename);
 		return $output;
 		
 	}
