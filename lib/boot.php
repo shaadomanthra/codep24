@@ -99,8 +99,16 @@ class Boot{
 
 	}
 	function stopDocker(){
-		$name =  $this->get('name');
-		shell_exec("docker container stop -t 20 ".$name);
+		$files = scandir('json/');
+		foreach($files as $file) {
+			if($file!=='.' && $file!=='..'){
+				echo $file.' ';
+				$p = explode('.', $file);
+				$name = $p[0];
+				shell_exec("docker container stop -t 20 ".$name);
+				break;
+			}
+		}
 	}
 
 
