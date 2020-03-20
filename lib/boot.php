@@ -107,8 +107,8 @@ class Boot{
 				$name = $p[0];
 				$filename = 'json/'.$file;
 				//echo $filename;
-				shell_exec("docker container stop -t 20 ".$name);
 				unlink($filename);
+				shell_exec("docker container stop -t 20 ".$name);
 				break;
 			}
 		}
