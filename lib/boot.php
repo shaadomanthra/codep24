@@ -73,6 +73,8 @@ class Boot{
 			$payload = '{"language":"assembly","command":"nasm -f elf64 -o a.o main.asm && ld -o a.out a.o && ./a.out '.$input.'", "files": [{"name": "main.asm", "content": '.$code.'}]}';
 		else if($lang =='ats')
 			$payload = '{"language":"ats", "files": [{"name": "main.dats", "content": '.$code.'}]}';
+		else if($lang =='bash')
+			$payload = '{"language":"bash", "command":"bash main.sh '.$input.'","files": [{"name": "main.sh", "content": '.$code.'}]}';
 
 
 		return $payload;
