@@ -1,4 +1,4 @@
-pre<?php require '../pages/blocks/header.php';  ?>
+<?php require '../pages/blocks/header.php';  ?>
 <?php  require '../lib/url.php'; ?>
 <main role="main" class="flex-shrink-0">
   <div class="container">
