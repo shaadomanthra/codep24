@@ -15,7 +15,7 @@
   <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/assembly.php" role="button">Assembly</a>
   <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/bash.php" role="button">Bash</a>
   <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/clojure.php" role="button">Clojure</a>
-  <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/cobol.php" role="button">Cobol</a>
+  <a class="btn btn-outline-danger btn-lg mb-3 mr-3" href="editor/cobol.php" role="button">Cobol</a>
   <a class="btn btn-outline-primary btn-lg mb-3 mr-3" href="editor/coffeescript.php" role="button">Coffeescript</a>
   </div>
 </main>
