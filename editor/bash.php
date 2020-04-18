@@ -6,7 +6,7 @@
      <div class="alert alert-info" role="alert">
   A basic Bash program to print 'Hello World' message
 </div>
-    <form action="../index.php" method="post"><textarea id="c-code" name="code">echo hello world</textarea>
+    <form action="../index.php" method="post"><textarea id="c-code" name="code">echo "hello world"</textarea>
     <input type="hidden" name="hash" value="krishnateja" />
     <input type="hidden" name="lang" value="bash" />
     <input type="hidden" name="c" value="0" />
