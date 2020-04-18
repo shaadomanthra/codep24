@@ -75,10 +75,13 @@ class Boot{
 			$payload = '{"language":"ats", "files": [{"name": "main.dats", "content": '.$code.'}]}';
 		else if($lang =='bash')
 			$payload = '{"language":"bash", "command":"bash main.sh '.$input.'","files": [{"name": "main.sh", "content": '.$code.'}]}';
-
 		else if($lang =='clojure')
-			$payload = '{"language":"bash", "command":"java -cp /usr/share/java/clojure.jar clojure.main main.clj '.$input.'","files": [{"name": "main.clj", "content": '.$code.'}]}';
-
+			$payload = '{"language":"clojure", "command":"java -cp /usr/share/java/clojure.jar clojure.main main.clj '.$input.'","files": [{"name": "main.clj", "content": '.$code.'}]}';
+		else if($lang =='cobol')
+			$payload = '{"language":"cobol", "command":"cob -x -o a.out main.cob && ./a.out '.$input.'","files": [{"name": "main.cob", "content": '.$code.'}]}';
+		else if($lang =='coffeescript')
+			$payload = '{"language":"coffeescript", "command":"coffee main.coffee '.$input.'","files": [{"name": "main.coffee", "content": '.$code.'}]}';
+		
 
 		return $payload;
 	}
