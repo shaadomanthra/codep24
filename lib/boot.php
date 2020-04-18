@@ -76,6 +76,9 @@ class Boot{
 		else if($lang =='bash')
 			$payload = '{"language":"bash", "command":"bash main.sh '.$input.'","files": [{"name": "main.sh", "content": '.$code.'}]}';
 
+		else if($lang =='clojure')
+			$payload = '{"language":"bash", "command":"java -cp /usr/share/java/clojure.jar clojure.main main.clj '.$input.'","files": [{"name": "main.clj", "content": '.$code.'}]}';
+
 
 		return $payload;
 	}
