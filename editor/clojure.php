@@ -6,7 +6,7 @@
      <div class="alert alert-info" role="alert">
   A basic Clojure program to print 'Hello World' message
 </div>
-    <form action="../index.php" method="post"><textarea id="c-code" name="code">(println \"Hello World!\")</textarea>
+    <form action="../index.php" method="post"><textarea id="c-code" name="code">(println "Hello World!")</textarea>
     <input type="hidden" name="hash" value="krishnateja" />
     <input type="hidden" name="lang" value="bash" />
     <input type="hidden" name="c" value="0" />
