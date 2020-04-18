@@ -4,7 +4,7 @@
   <div class="container">
     <h1 class="mt-5 mb-5"><a href="../index.php"><img src="../img/p24.png" width="100px"/></a></h1>
      <div class="alert alert-info" role="alert">
-  A basic c program to print 'Hello World' message
+  A basic assembly program to print 'Hello World' message
 </div>
     <form action="../index.php" method="post"><textarea id="c-code" name="code">section .data
     msg db "Hello World!", 0ah

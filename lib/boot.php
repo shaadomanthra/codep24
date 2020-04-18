@@ -71,6 +71,8 @@ class Boot{
 			$payload = '{"language":"csharp","command":"mcs -out:a.exe main.cs && mono a.exe '.$input.'", "files": [{"name": "main.cs", "content": '.$code.'}]}';
 		else if($lang =='assembly')
 			$payload = '{"language":"assembly","command":"nasm -f elf64 -o a.o main.asm && ld -o a.out a.o && ./a.out '.$input.'", "files": [{"name": "main.asm", "content": '.$code.'}]}';
+		else if($lang =='ats')
+			$payload = '{"language":"ats", "files": [{"name": "main.dats", "content": '.$code.'}]}';
 
 
 		return $payload;
