@@ -69,6 +69,10 @@ class Boot{
 			$payload = '{"language":"perl","command":"perl main.pl '.$input.'", "files": [{"name": "main.pl", "content": '.$code.'}]}';
 		else if($lang =='csharp')
 			$payload = '{"language":"csharp","command":"mcs -out:a.exe main.cs && mono a.exe '.$input.'", "files": [{"name": "main.cs", "content": '.$code.'}]}';
+		else if($lang =='assembly')
+			$payload = '{"language":"assembly","command":"nasm -f elf64 -o a.o main.asm && ld -o a.out a.o && ./a.out '.$input.'", "files": [{"name": "main.asm", "content": '.$code.'}]}';
+
+
 		return $payload;
 	}
 
