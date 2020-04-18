@@ -8,7 +8,7 @@
 </div>
     <form action="../index.php" method="post"><textarea id="c-code" name="code">(println "Hello World!")</textarea>
     <input type="hidden" name="hash" value="krishnateja" />
-    <input type="hidden" name="lang" value="bash" />
+    <input type="hidden" name="lang" value="clojure" />
     <input type="hidden" name="c" value="0" />
     <input type="hidden" name="page" value="output" />
     <input type="hidden" name="docker" value="1" />
