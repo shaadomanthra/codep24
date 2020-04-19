@@ -87,6 +87,10 @@ class Boot{
 			$payload = '{"language":"d", "command":"dmd -ofa.out main.d && ./a.out '.$input.'","files": [{"name": "main.d", "content": '.$code.'}]}';
 		else if($lang =='elixir')
 			$payload = '{"language":"elixir", "command":"elixirc main.ex '.$input.'","files": [{"name": "main.ex", "content": '.$code.'}]}';
+		else if($lang =='elm')
+			$payload = '{"language":"elm", "command":"todo '.$input.'","files": [{"name": "main.elm", "content": '.$code.'}]}';
+		else if($lang =='erlang')
+			$payload = '{"language":"erlang", "command":"escript main.erl '.$input.'","files": [{"name": "main.erl", "content": '.$code.'}]}';
 
 
 		return $payload;
