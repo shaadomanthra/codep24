@@ -88,7 +88,7 @@ class Boot{
 		else if($lang =='elixir')
 			$payload = '{"language":"elixir", "command":"elixirc main.ex '.$input.'","files": [{"name": "main.ex", "content": '.$code.'}]}';
 		else if($lang =='elm')
-			$payload = '{"language":"elm", "command":"todo '.$input.'","files": [{"name": "main.elm", "content": '.$code.'}]}';
+			$payload = '{"language":"elm","files": [{"name": "main.elm", "content": '.$code.'}]}';
 		else if($lang =='erlang')
 			$payload = '{"language":"erlang", "command":"escript main.erl '.$input.'","files": [{"name": "main.erl", "content": '.$code.'}]}';
 
