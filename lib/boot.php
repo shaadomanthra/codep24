@@ -78,13 +78,13 @@ class Boot{
 		else if($lang =='clojure')
 			$payload = '{"language":"clojure", "command":"java -cp /usr/share/java/clojure.jar clojure.main main.clj '.$input.'","files": [{"name": "main.clj", "content": '.$code.'}]}';
 		else if($lang =='cobol')
-			$payload = '{"language":"cobol", "command":"cob -x -o a.out main.cob && ./a.out '.$input.'","files": [{"name": "main.cob", "content": '.$code.'}]}';
+			$payload = '{"language":"cobol", "files": [{"name": "main.cob", "content": '.$code.'}]}';
 		else if($lang =='coffeescript')
 			$payload = '{"language":"coffeescript", "command":"coffee main.coffee '.$input.'","files": [{"name": "main.coffee", "content": '.$code.'}]}';
 		else if($lang =='crystal')
 			$payload = '{"language":"crystal", "command":"crystal run main.cr '.$input.'","files": [{"name": "main.cr", "content": '.$code.'}]}';
 		else if($lang =='d')
-			$payload = '{"language":"d", "command":"dmd -ofa.out main.d && ./a.out '.$input.'","files": [{"name": "main.d", "content": '.$code.'}]}';
+			$payload = '{"language":"d","files": [{"name": "main.d", "content": '.$code.'}]}';
 		else if($lang =='elixir')
 			$payload = '{"language":"elixir", "command":"elixirc main.ex '.$input.'","files": [{"name": "main.ex", "content": '.$code.'}]}';
 		else if($lang =='elm')
