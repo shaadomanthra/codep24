@@ -6,12 +6,7 @@
      <div class="alert alert-info" role="alert">
   A basic Elixir program to print 'Hello World' message
 </div>
-    <form action="../index.php" method="post"><textarea id="c-code" name="code">import std.stdio;
-
-void main()
-{
-    writeln("Hello World!");
-}</textarea>
+    <form action="../index.php" method="post"><textarea id="c-code" name="code">IO.puts "Hello World!"</textarea>
     <input type="hidden" name="hash" value="krishnateja" />
     <input type="hidden" name="lang" value="elixir" />
     <input type="hidden" name="c" value="0" />
