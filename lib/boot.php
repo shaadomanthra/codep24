@@ -81,7 +81,10 @@ class Boot{
 			$payload = '{"language":"cobol", "command":"cob -x -o a.out main.cob && ./a.out '.$input.'","files": [{"name": "main.cob", "content": '.$code.'}]}';
 		else if($lang =='coffeescript')
 			$payload = '{"language":"coffeescript", "command":"coffee main.coffee '.$input.'","files": [{"name": "main.coffee", "content": '.$code.'}]}';
-		
+		else if($lang =='crystal')
+			$payload = '{"language":"crystal", "command":"crystal run main.cr '.$input.'","files": [{"name": "main.cr", "content": '.$code.'}]}';
+		else if($lang =='d')
+			$payload = '{"language":"d", "command":"dmd -ofa.out main.d && ./a.out '.$input.'","files": [{"name": "main.d", "content": '.$code.'}]}';
 
 		return $payload;
 	}
