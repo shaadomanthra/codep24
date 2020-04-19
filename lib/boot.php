@@ -85,6 +85,9 @@ class Boot{
 			$payload = '{"language":"crystal", "command":"crystal run main.cr '.$input.'","files": [{"name": "main.cr", "content": '.$code.'}]}';
 		else if($lang =='d')
 			$payload = '{"language":"d", "command":"dmd -ofa.out main.d && ./a.out '.$input.'","files": [{"name": "main.d", "content": '.$code.'}]}';
+		else if($lang =='elixir')
+			$payload = '{"language":"elixir", "command":"elixirc main.ex '.$input.'","files": [{"name": "main.ex", "content": '.$code.'}]}';
+
 
 		return $payload;
 	}
