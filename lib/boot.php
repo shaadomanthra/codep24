@@ -138,6 +138,15 @@ class Boot{
 		}
 	}
 
+	function stopDockerID(){
+		$name = $this->get('name');
+		if(!$name)
+			return null;
+		$filename = 'json/'.$name.'.json';
+		shell_exec("docker container stop -t 20 ".$name);
+		unlink($filename);
+	}
+
 
 	function run_plain($lang,$payload){
 
